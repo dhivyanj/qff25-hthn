@@ -90,7 +90,7 @@ This module will classify the "images" from Phase 3, fulfilling **Step 4** of ou
    * Split the data into a training (X\_train, y\_train) and testing (X\_test, y\_test) set.  
 2. **Define the Quantum Kernel:**  
    * Define a quantum feature map circuit (e.g., qml.AngleEmbedding) as a QNode. This circuit will take one flattened "image" vector as its features argument.  
-   * This QNode will be used by PennyLane to calculate the similarity between data points.  
+   * This QNode will be used by PennyLane to calculate the similarity between data points. Ensure the embedding is appropriate for the flattened image size.  
 3. **Create and Train the SVC (using the Quantum Kernel):**  
    * Use the qml.kernels.kernel\_matrix function to compute the kernel matrix for the training data. This function will repeatedly run your feature map QNode.  
      * kernel\_train \= qml.kernels.kernel\_matrix(X\_train, X\_train, kernel=your\_feature\_map\_qnode, ...)  
