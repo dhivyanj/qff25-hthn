@@ -8,7 +8,15 @@
 
 **Task**: Participants can apply Quantum Reservoir Computing to predict renewable energy generation based on historical weather features like wind speed and irradiance. The results can be compared to a classical RNN to evaluate efficiency and stability.
 
-To view the general over
+To view the general canva file, view: [Canva Link](https://www.canva.com/design/DAG3MuhGYXk/EdQz3bmG8W6MSe5ZGZhA6Q/edit?utm_content=DAG3MuhGYXk&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+
+## Preface
+
+The increasing reliance on renewable energy sources is essential for sustainable grid management, but it introduces significant challenges due to the inherent volatility of sources like wind. The output of a wind turbine is a complex, non-linear time series governed by chaotic environmental factors, making it difficult to predict. Thus years of research are required before implementing the sustainable energy source.
+
+Recently, the usage of classical algorithms and the advent of AI has reduced this time frame to a mere 6 months. In this github repo, we will be using a changed version of the RNN models, like LTSM, to establish a baseline to compare against the results of a futuristic model to be proposed.
+
+However, it is the need of the hour to implement the sources as soon as possible. Thus, we need to shift to quantum models as they intrinsically store and understand relations in the n-dimensional space via the use of superposition, entnglement. By leveraging solution filters, we can classify and condense the quantum probablities into their most probable output states.
 
 ## System Architecture for the Quantum Segment
 
