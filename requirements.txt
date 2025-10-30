@@ -1,0 +1,10 @@
+
+
+streamlit
+pandas
+numpy
+matplotlib
+pennylane
+scikit-learn
+shap
+tensorflow
