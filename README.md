@@ -36,11 +36,110 @@ However, it is the need of the hour to implement the sources as soon as possible
 
 We have used a LSTM model for baseline comparison
 
-## What is Quantum Reservoir Computing?
+## RNN based results:
+
+```
+sugeethjsa@sugeethjsa-IdeaPad-5-14ITL05:~/Documents/GitHub/dhivyanj/qff25-hthn$ /usr/bin/python3 /home/sugeethjsa/Documents/GitHub/dhivyanj/qff25-hthn/ltsm_final.py
+2025-10-30 20:55:08.002311: I external/local_xla/xla/tsl/cuda/cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+2025-10-30 20:55:08.030316: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2025-10-30 20:55:09.486201: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2025-10-30 20:55:11.481720: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2025-10-30 20:55:11.484134: I external/local_xla/xla/tsl/cuda/cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+
+--- Loading and Preparing Data ---
+/home/sugeethjsa/Documents/GitHub/dhivyanj/qff25-hthn/ltsm_final.py:35: FutureWarning: DataFrame.interpolate with object dtype is deprecated and will raise in a future version. Call obj.infer_objects(copy=False) before interpolating instead.
+  df = df.resample('h').interpolate(method='time')
+Cleaned dataset: 96432 samples | Features: 3
+Training sequences: (77121, 24, 3), Test sequences: (19263, 24, 3)
+2025-10-30 20:55:13.595029: E external/local_xla/xla/stream_executor/cuda/cuda_platform.cc:51] failed call to cuInit: INTERNAL: CUDA error: Failed call to cuInit: UNKNOWN ERROR (303)
+
+--- Training LSTM Model ---
+Epoch 1/20
+2411/2411 ━━━━━━━━━━━━━━━━━━━━ 31s 12ms/step - loss: 0.0097 - val_loss: 0.0198
+Epoch 2/20
+2411/2411 ━━━━━━━━━━━━━━━━━━━━ 30s 13ms/step - loss: 0.0067 - val_loss: 0.0192
+Epoch 3/20
+2411/2411 ━━━━━━━━━━━━━━━━━━━━ 30s 12ms/step - loss: 0.0065 - val_loss: 0.0184
+Epoch 4/20
+2411/2411 ━━━━━━━━━━━━━━━━━━━━ 34s 14ms/step - loss: 0.0066 - val_loss: 0.0185
+Epoch 5/20
+2411/2411 ━━━━━━━━━━━━━━━━━━━━ 39s 16ms/step - loss: 0.0060 - val_loss: 0.0181
+Epoch 6/20
+2411/2411 ━━━━━━━━━━━━━━━━━━━━ 35s 14ms/step - loss: 0.0062 - val_loss: 0.0187
+Epoch 7/20
+2411/2411 ━━━━━━━━━━━━━━━━━━━━ 29s 12ms/step - loss: 0.0062 - val_loss: 0.0190
+Epoch 8/20
+2411/2411 ━━━━━━━━━━━━━━━━━━━━ 31s 13ms/step - loss: 0.0061 - val_loss: 0.0180
+Epoch 9/20
+2411/2411 ━━━━━━━━━━━━━━━━━━━━ 29s 12ms/step - loss: 0.0063 - val_loss: 0.0189
+Epoch 10/20
+2411/2411 ━━━━━━━━━━━━━━━━━━━━ 31s 13ms/step - loss: 0.0065 - val_loss: 0.0191
+Epoch 11/20
+2411/2411 ━━━━━━━━━━━━━━━━━━━━ 26s 11ms/step - loss: 0.0064 - val_loss: 0.0183
+Epoch 12/20
+2411/2411 ━━━━━━━━━━━━━━━━━━━━ 30s 12ms/step - loss: 0.0063 - val_loss: 0.0192
+Epoch 13/20
+2411/2411 ━━━━━━━━━━━━━━━━━━━━ 30s 12ms/step - loss: 0.0067 - val_loss: 0.0177
+Epoch 14/20
+2411/2411 ━━━━━━━━━━━━━━━━━━━━ 32s 13ms/step - loss: 0.0070 - val_loss: 0.0184
+Epoch 15/20
+2411/2411 ━━━━━━━━━━━━━━━━━━━━ 30s 12ms/step - loss: 0.0068 - val_loss: 0.0187
+Epoch 16/20
+2411/2411 ━━━━━━━━━━━━━━━━━━━━ 45s 19ms/step - loss: 0.0069 - val_loss: 0.0177
+Epoch 17/20
+2411/2411 ━━━━━━━━━━━━━━━━━━━━ 28s 12ms/step - loss: 0.0065 - val_loss: 0.0173
+Epoch 18/20
+2411/2411 ━━━━━━━━━━━━━━━━━━━━ 28s 12ms/step - loss: 0.0064 - val_loss: 0.0166
+Epoch 19/20
+2411/2411 ━━━━━━━━━━━━━━━━━━━━ 28s 12ms/step - loss: 0.0065 - val_loss: 0.0165
+Epoch 20/20
+2411/2411 ━━━━━━━━━━━━━━━━━━━━ 29s 12ms/step - loss: 0.0064 - val_loss: 0.0165
+
+--- Evaluating LSTM Regression ---
+602/602 ━━━━━━━━━━━━━━━━━━━━ 3s 4ms/step    
+RMSE: 7.937°C | MAE: 6.698°C | R²: 0.236
+
+--- Renewable Energy Recommendation ---
+
+--- Energy Source Classification Metrics ---
+
+Overall Accuracy: 1.000
+Weighted Precision: 1.000 | Recall: 1.000 | F1: 1.000
+
+Detailed per-class report:
+        precision    recall  f1-score  support
+Hydro   0.992806  0.995192  0.993998    416.0
+Solar   0.894737  0.850000  0.871795     20.0
+Wind    1.000000  1.000000  1.000000  18827.0
+
+✅ Metrics, confusion matrix, and CSVs saved in 'rnn_model_comparison_outputs/'
+```
+
+After looking at the LSTM based model (located at lstm_final.py); the model has insanely high f1 scores, but tended to predict mostly "Wind" as its preferred choice, which can be wrong in most cases. Usually, solar is considered among the most stable and the most energy providing source (as wind are aftereffects of heat transfer); so it could have suggested solar for days where wind could not provide enough energy, however, it is very rare to find that among the given data set.
+
+We can however, manually give more weightage to the data by modifying the weights.
+
+Thus, even if we try to change the weights and limits, it can not infer intrinsic relations that are embedded deep within the data.
+
+Enter QRC and QSVC.
+
+# What is Quantum Reservoir Computing?
 
 - Quantum Reservoir Computing (QRC) is a machine learning model that uses the complex dynamics of a quantum system as a computational resource. It's an extension of classical reservoir computing.
 - Instead of a classical neural network, QRC uses a "reservoir" of interconnected quantum bits (qubits). Input data is fed into this quantum reservoir, causing its complex quantum state to evolve in time. This reservoir remains fixed and is not trained. The quantum properties of superposition and entanglement allow it to map the input data into a much higher-dimensional space.
 - Finally, a simple, classical linear "readout" layer is trained to interpret the quantum state measurements from the reservoir and produce the desired output, making it well-suited for processing complex temporal data.
+
+## And what is QSVC?
+
+🧠 Like drawing boundaries:
+QSVC is a quantum version of a classical Support Vector Machine (SVM). It finds the best boundary (or “line”) that separates different types of data — like classifying solar vs. wind energy patterns — but uses quantum math to do it.
+
+⚛️ Quantum-powered feature space:
+Instead of using normal math to separate data, QSVC maps it into a quantum feature space using qubits. This space can capture very complex relationships between data points that classical computers might miss.
+
+🚀 Better at spotting patterns:
+By leveraging quantum superposition and entanglement, QSVC can recognize subtle or overlapping patterns more efficiently — potentially achieving better accuracy with fewer resources once quantum hardware matures; otherwise we can also acheive better relations with lower overall accuracy. The context map of this method is exponentially higher compared to traditional methods.
 
 ## System Architecture for the Quantum Segment
 
@@ -246,6 +345,8 @@ Here are the images that were generated by using seaborn for heatmap visulasatio
 
 1. Dashboard based integration and dynamically uploading data. Skeleton work of the same is present here in the repo.
 2. We can also work on improving the security of energy grids as the renewable sources are prone to environmental hijacking by third party bad actors (basically "hacking" in the world of sociology and biology); by using the quantum models for dynamic load balancing; so that our smart bidirectional energy grid supply can survive even in the face of catastrophic failure due to resource reallocation.
+
+Glimpses at what the future scope could look like can be seen in the Future_implements folder, where we have tried to perform multiple different implementations with streamlit and ipynb; and some others that are not even present there like a HTML/css/react based versions of the website that we tried to demo, but integration seemed unfeasible.
 
 
 ## Research
